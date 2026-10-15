@@ -1,0 +1,9 @@
+fx_version 'cerulean'
+game 'gta5'
+
+author 'Ghost'
+description 'Optimized check of whether an entity is exposed under the Sun'
+version '1.0.0'
+
+client_script 'dist/client.js'
+--server_script 'dist/server.js'
