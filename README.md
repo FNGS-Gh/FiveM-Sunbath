@@ -36,7 +36,19 @@ npm install -D typescript @citizenfx/client @citizenfx/server
 
 ### Sun Tracking (gif):
 
-![Sun Tracking](https://i.imgur.com/udAwUf2.gif)
+![Sun Tracking](https://github.com/FNGS-Gh/FiveM-Sunbath/blob/dev/GIF/demo.gif?raw=true)
+
+### Light Collision (gif):
+
+![Light Collision](https://github.com/FNGS-Gh/FiveM-Sunbath/blob/dev/GIF/demo2.gif?raw=true)
+
+### Light Collision Through a Car (gif):
+
+![Light Collision Through a Car](https://github.com/FNGS-Gh/FiveM-Sunbath/blob/dev/GIF/demo3.gif?raw=true)
+
+### Light Collision Through a Window (gif):
+
+![Light Collision Through a Window](https://github.com/FNGS-Gh/FiveM-Sunbath/blob/dev/GIF/demo4.gif?raw=true)
 
 ## 3. Known Issues
 
