@@ -62,7 +62,6 @@ class Sun {
     if (this.isCalculating) return;
     this.isCalculating = true;
 
-    this.isExposed = false;
     let anyExposed = false;
 
     for (let i = 0; i < this.bones.length; i++) {
@@ -95,7 +94,11 @@ class Sun {
       if (hit) anyExposed = true;
     }
 
-    this.isExposed = anyExposed;
+    if (this.isExposed !== anyExposed) {
+      this.isExposed = anyExposed;
+      emit('Sun:EntityExposed', anyExposed, this.entity);
+    }
+
     this.isCalculating = false;
   }
 }
