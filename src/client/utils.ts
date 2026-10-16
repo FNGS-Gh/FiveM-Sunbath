@@ -10,7 +10,7 @@ enum SunPos {
   START_DECIM     = 6.0,
   END_DECIM       = 20.0,
   DAY_SPAN        = 14.0,
-  PEAK_ELEVATION  = 0.885,
+  PEAK_ELEVATION  = 0.95,
   NS_SKEW         = -0.534,
 }
 
