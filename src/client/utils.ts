@@ -11,8 +11,13 @@ enum SunPos {
   END_DECIM       = 20.0,
   DAY_SPAN        = 14.0,
   PEAK_ELEVATION  = 0.855,
-  NS_SKEW         = -0.534
+  NS_SKEW         = -0.534,
 }
+
+export type BoneData = {
+  id: number,
+  exposed: boolean,
+};
 
 export class Vector3 {
   constructor(
@@ -34,8 +39,10 @@ export class SunVector extends Vector3 {
   constructor(h: number, m: number) {
     const hourDecimal = h + m / 60.0;
 
-    if (hourDecimal < SunPos.START_DECIM || hourDecimal > SunPos.END_DECIM)
+    if (hourDecimal < SunPos.START_DECIM || hourDecimal > SunPos.END_DECIM) {
       super(0, 0, -1.0);
+      return;
+    }
 
     const progress = (hourDecimal - 6.0) / SunPos.DAY_SPAN;
     const theta = progress * Math.PI;
