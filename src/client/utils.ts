@@ -20,29 +20,22 @@ export type BoneData = {
 };
 
 export class Vector3 {
+  private static readonly SUN_MEMO = new Map<number, Vector3>;
+
   constructor(
     public x: number,
     public y: number,
     public z: number
   ) {}
 
-  multiply(scalar: number): Vector3 {
-    return new Vector3(this.x * scalar, this.y * scalar, this.z * scalar);
-  }
-
-  add(v: Vector3): Vector3 {
-    return new Vector3(this.x + v.x, this.y + v.y, this.z + v.z);
-  }
-}
-
-export class SunVector extends Vector3 {
-  constructor(h: number, m: number) {
+  static getSunV(h: number, m: number): Vector3 {
     const hourDecimal = h + m / 60.0;
 
-    if (hourDecimal < SunPos.START_DECIM || hourDecimal > SunPos.END_DECIM) {
-      super(0, 0, -1.0);
-      return;
-    }
+    if (hourDecimal < SunPos.START_DECIM || hourDecimal > SunPos.END_DECIM)
+      return new Vector3(0, 0, -1.0);
+
+    const memoV = this.SUN_MEMO.get(hourDecimal);
+    if (memoV !== undefined) return memoV;
 
     const progress = (hourDecimal - 6.0) / SunPos.DAY_SPAN;
     const theta = progress * Math.PI;
@@ -52,6 +45,17 @@ export class SunVector extends Vector3 {
     const sunZ = SunPos.PEAK_ELEVATION * Math.sin(theta);
 
     const len = Math.sqrt(sunX * sunX + sunY * sunY + sunZ * sunZ);
-    super(sunX / len, sunY / len, sunZ / len);
+    const sunV = new Vector3(sunX / len, sunY / len, sunZ / len);
+
+    this.SUN_MEMO.set(hourDecimal, sunV);
+    return sunV;
+  }
+
+  multiply(scalar: number): Vector3 {
+    return new Vector3(this.x * scalar, this.y * scalar, this.z * scalar);
+  }
+
+  add(v: Vector3): Vector3 {
+    return new Vector3(this.x + v.x, this.y + v.y, this.z + v.z);
   }
 }

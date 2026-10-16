@@ -1,4 +1,4 @@
-import { PedBones, BoneData, Vector3, SunVector } from './utils';
+import { PedBones, BoneData, Vector3 } from './utils';
 
 class Sun {
   private _entity = PlayerPedId();
@@ -30,13 +30,13 @@ class Sun {
     this._entity = DoesEntityExist(entity) ? entity : PlayerPedId();
   }
 
-  static get vector(): SunVector {
-    return new SunVector(GetClockHours(), GetClockMinutes());
+  static get vector(): Vector3 {
+    return Vector3.getSunV(GetClockHours(), GetClockMinutes());
   }
 
   private drawDebugLine(
     boneV: Vector3,
-    sunV: SunVector,
+    sunV: Vector3,
     exposed: boolean
   ) {
     const rgb = exposed ? [0, 255, 0] : [255, 0, 0];
@@ -109,7 +109,7 @@ const EntitySun = new Sun(PlayerPedId(), [
   PedBones.L_HAND,
   PedBones.R_FOOT,
   PedBones.L_FOOT
-], 20.0);
+]);
 
 on('playerSpawned', () => {
   EntitySun.entity = PlayerPedId();
