@@ -35,3 +35,7 @@ npm install -D typescript @citizenfx/client @citizenfx/server
 ## 2. Description
 
 This project
+
+## 3. Known Issues
+
+*None at the moment*
