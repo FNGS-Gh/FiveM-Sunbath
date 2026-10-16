@@ -1,5 +1,4 @@
-import { drawSunVectorDebug } from './Draw';
-import { BoneData, PedBones, SunVector, Vector3 } from './utils';
+import { PedBones, BoneData, Vector3, SunVector } from './utils';
 
 class Sun {
   private _entity = PlayerPedId();
