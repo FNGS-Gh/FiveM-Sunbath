@@ -34,7 +34,9 @@ npm install -D typescript @citizenfx/client @citizenfx/server
 
 ## 2. Description
 
-This project
+### Sun Tracking (gif):
+
+![Sun Tracking](https://i.imgur.com/udAwUf2.gif)
 
 ## 3. Known Issues
 
