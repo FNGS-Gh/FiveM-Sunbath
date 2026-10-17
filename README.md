@@ -48,7 +48,8 @@ Whenever the exposure state changes (`true`/`false`), the `Sun:EntityExposed` cl
 
 ### Sun Tracking (gif):
 
-![Sun Tracking](https://github.com/FNGS-Gh/FiveM-Sunbath/blob/dev/GIF/demo.gif?raw=true)
+![Sun Tracking](https://github.com/FNGS-Gh/FiveM-Sunbath/blob/dev/GIF/demo.gif?raw=true)\
+*\*This timelapse was done in-game via my [TimeSync script](https://github.com/FNGS-Gh/FiveM-TimeSync).*
 
 ### Light Collision (gif):
 
