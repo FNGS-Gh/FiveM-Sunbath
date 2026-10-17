@@ -38,6 +38,14 @@ This resource tracks the Sun precise vector over the sky map by applying a custo
 
 The script ended up being fairly optimized. During the testing I've tracked the exposure of 5 Ped bones at once. Despite casting 5 rays and checking whether they hit anything in 1,200 distance units, the processor time stays within the `0.02ms-0.03ms` range. The sun tracking formula also memoizes the calculated values, so with a longer client runtime the processor time should be even less.
 
+### Client Event:
+
+Whenever the exposure state changes (`true`/`false`), the `Sun:EntityExposed` client event is executed.
+
+`Sun:EntityExposed` arguments:\
+• `state`: `boolean` - the current state of Sun exposure;\
+• `entity`: `number` - the affected Entity ID.
+
 ### Sun Tracking (gif):
 
 ![Sun Tracking](https://github.com/FNGS-Gh/FiveM-Sunbath/blob/dev/GIF/demo.gif?raw=true)
