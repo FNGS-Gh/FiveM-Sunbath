@@ -42,9 +42,9 @@ The script ended up being fairly optimized. During the testing I've tracked the 
 
 Whenever the exposure state changes (`true`/`false`), the `Sun:EntityExposed` client event is executed.
 
-`Sun:EntityExposed` arguments:
-`state`: `boolean` - the current state of Sun exposure;
-`entity`: `number` - the affected Entity ID.
+`Sun:EntityExposed` arguments:\
+• `state`: `boolean` - the current state of Sun exposure;\
+• `entity`: `number` - the affected Entity ID.
 
 ### Sun Tracking (gif):
 
